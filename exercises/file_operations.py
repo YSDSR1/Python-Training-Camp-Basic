@@ -19,6 +19,8 @@ def read_file(file_path):
     """
     # 请在下方编写代码
     # 使用open()函数打开文件并读取内容
+    file1 = open(file_path, 'tr')
+    return file1.read()
     pass
 
 def write_file(file_path, content):
@@ -34,4 +36,7 @@ def write_file(file_path, content):
     """
     # 请在下方编写代码
     # 使用with语句和open()函数写入内容到文件
+    with open(file_path, 'w') as target_file:
+        return bool(target_file.write(content))
+
     pass 

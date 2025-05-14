@@ -8,6 +8,7 @@
 """
 
 def print_hello_world():
+    print("Hello, World!")
     """
     输出"Hello, World!"
     

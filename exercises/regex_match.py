@@ -3,7 +3,7 @@
 
 在本练习中，你将练习使用Python的正则表达式来处理文本匹配和提取。
 """
-import re
+
 
 def find_emails(text):
     """
@@ -17,6 +17,9 @@ def find_emails(text):
     """
     # 实现你的代码: 使用正则表达式查找所有邮箱地址
     # 邮箱格式通常为: username@domain.com
+    import re
+    pattern = re.compile(r"[\w][a-zA-Z0-9._%+-]*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}")
+    return pattern.findall(text)
     pass
 
 
@@ -36,7 +39,11 @@ def is_valid_phone_number(phone):
         bool: 如果是有效的手机号码则返回True，否则返回False
     """
     # 实现你的代码: 验证手机号码是否合法
+    import re
+    pattern = re.compile(r"^1[3-9]\d{9}$")
+    return bool(pattern.match(phone))
     pass
+ 
 
 
 def extract_urls(text):
@@ -51,4 +58,7 @@ def extract_urls(text):
     """
     # 实现你的代码: 使用正则表达式提取所有URL
     # 需要考虑http://和https://开头的URL
+    import re
+    pattern = re.compile("http[s]?://[a-zA-Z0-9$_.+!*'(),;&=@~:-]+(?:[/?#][^\s<>]*)?")
+    return pattern.findall(text)
     pass 

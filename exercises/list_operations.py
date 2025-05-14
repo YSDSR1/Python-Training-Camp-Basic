@@ -20,4 +20,12 @@ def student_list_operations(students, operation, *args):
     - 操作后的学生列表
     """
     # 请在下方编写代码
+    studentslist: list = students
+    if operation == "add":
+        studentslist.append(args[0])
+    elif operation == "remove":
+        studentslist.remove(args[0])
+    else:
+        studentslist[studentslist.index(args[0])] = args[1]
+    return studentslist
     pass 
